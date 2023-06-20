@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Função com interação da loló</title>
+   
+</head>
+<body>
+    
+    <button onclick="personalizado()">Escolher cor ;)</button>
+    <p id="output"></p>
+
+    <script>
+        function personalizado() {
+            var nome = prompt("Hello! Qual é o seu nome?");
+
+            if (nome) {
+             mensagem = "Bem vinde " + nome + "! ";
+             output = document.getElementById("output");
+
+             resposta = prompt(mensagem + "Você está pronte para começar? (sim/não)");
+
+                if (resposta && resposta.toLowerCase() === "sim") {
+                    var cor = prompt("Amei, agora escolhe uma cor: vermelho, azul ou verde");
+
+                    if (cor) {
+                        
+
+                        output.innerHTML = "Ótima escolha, " + nome + "!";
+
+                        if (cor.toLowerCase() === "vermelho") {
+                            output.style.color = "red";
+                        } else if (cor.toLowerCase() === "azul") {
+                            output.style.color = "blue";
+                        } else if (cor.toLowerCase() === "verde") {
+                            output.style.color = "green";
+                        } else {
+                            output.innerHTML = "Escolha uma das três!";
+                        }
+                    } else {
+                        var output = document.getElementById("output");
+                        output.innerHTML = "Por favor, insira uma cor!";
+                    }
+                } else {
+                    var output = document.getElementById("output");
+                    output.innerHTML = "Que pena, você não pode concluir assim!";
+                }
+            } else {
+                var output = document.getElementById("output");
+                output.innerHTML = "Por favor, insira um nome!";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
